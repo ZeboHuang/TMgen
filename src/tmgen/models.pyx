@@ -6,8 +6,8 @@ import numpy
 from six.moves import range
 from tmgen.exceptions import TMgenException
 from tmgen.tm cimport TrafficMatrix
-
-cdef numpy.ndarray _peak_mean_cycle(double freq, double n, double mean,
+# fix. line 44: numpy.linspace(), n must be integer
+cdef numpy.ndarray _peak_mean_cycle(double freq, int n, double mean,
                                     double peak_to_mean,
                                     double trough_to_mean=numpy.nan):
     """
